@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Currency Converter</title>
+</head>
+<body>
+    <h2>Currency Converter</h2>
+    <form method="POST" action="/convert">
+        Amount: <input type="number" name="amount" required><br>
+        From:
+        <select name="from_curr">
+            {% for curr in currencies %}
+            <option value="{{ curr }}">{{ curr }}</option>
+            {% endfor %}
+        </select><br>
+        To:
+        <select name="to_curr">
+            {% for curr in currencies %}
+            <option value="{{ curr }}">{{ curr }}</option>
+            {% endfor %}
+        </select><br>
+        <input type="submit" value="Convert">
+    </form>
+</body>
+</html>
